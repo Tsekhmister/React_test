@@ -10,8 +10,8 @@ export function Movie(props) {
     <div className="card movie" id={id}>
       <div className="card-image waves-effect waves-block waves-light">
         {
-          poster === 'N?A' ? 
-            <img className="activator" src={`https://via.placeholder.com/300x420.png?text=${title}`} alt={title}/>
+          poster === 'N/A' ? 
+            <img className="activator" src={`https://via.placeholder.com/300x400.png?text=${title}`} alt={title}/>
            : <img className="activator" src={poster} alt={title}/>
         } 
       </div>
