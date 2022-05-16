@@ -12,21 +12,31 @@ export class Main extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=citizen`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=citizen`)
       .then((response) => response.json())
-      .then((data) => this.setState({ movies: data.Search, loading: false }));
+      .then((data) => this.setState({ movies: data.Search, loading: false })
+      )
+      .catch((error) => {
+        console.error(error);
+        this.setState({ loading: false });
+      });
   }
 
   searchMovies = (str, type = 'all') => {
     this.setState({ loading: true });
 
     fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${
         type !== 'all' ? `&type=${type}` : ''
       }`
     )
       .then((response) => response.json())
-      .then((data) => this.setState({ movies: data.Search, loading: false }));
+      .then((data) => this.setState({ movies: data.Search, loading: false })
+      )
+      .catch((error) => {
+        console.error(error);
+        this.setState({ loading: false });
+      });
   };
 
   render() {
