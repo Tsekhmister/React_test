@@ -1,6 +1,6 @@
 # React movies
 
-[DEMO LINK](https://Tsekhmister.github.io/react_decompose/)
+[DEMO LINK](http://Tsekhmister.github.io/react_movies/)
 
 # Description
 
